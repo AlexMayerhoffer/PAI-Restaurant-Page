@@ -1,0 +1,206 @@
+/* CSS pentru toate paginile */
+@font-face {
+  font-family: genshinFont;
+  src: url(../assets/zh-cn.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: genshinFont;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+/* CSS pentru toate paginile --------------- */
+
+/* CSS Header */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 10rem;
+  background: url("../assets/header_bg.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-right: 4rem;
+  gap: 2rem;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.38);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.38);
+}
+
+.logo {
+  height: 8rem;
+  width: auto;
+  margin-right: auto;
+}
+
+.header_button {
+  width: 12rem;
+  min-width: 12rem;
+  height: 4rem;
+  border-radius: 5px;
+  color: #312f1c;
+  font-size: larger;
+  background: url("../assets/button_bg.png") no-repeat;
+  background-size: 100% 100%;
+  border-color: #312f1c;
+  border-width: 3px;
+  cursor: pointer;
+}
+
+.header_button:hover {
+  filter: brightness(110%);
+}
+
+.header_button:disabled {
+  filter: saturate(0);
+  cursor: auto;
+}
+/* CSS Header --------------- */
+
+/* Wrapper pentru continut pagini */
+.wrapper {
+  background: #333226;
+  z-index: 1;
+  width: 100%;
+  height: calc(100vh - 10rem);
+  /*background-size: 50% 100%;*/
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.dish_list_wrapper {
+  height: 100%;
+  background: url("../assets/home_border.png");
+  background-size: 100% 100%;
+}
+
+.dish_list_container {
+  padding: 1% 5%;
+
+  height: min-content;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(20%, 1fr));
+  grid-auto-rows: min-content;
+  gap: 1rem;
+}
+
+.dish_card {
+  box-sizing: border-box;
+  /*background: goldenrod;*/
+  /*flex-grow: 1;*/
+  /*width: max(12rem, 20%);*/
+  aspect-ratio: 1.1;
+  /*position: relative;*/
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  /*flex-grow: 1;*/
+  position: relative;
+  border-radius: 1rem;
+  background: #ece7e4;
+  overflow: hidden;
+}
+
+.dish_card:hover {
+  border: white solid 2px;
+}
+
+.dish_card_selected {
+  box-shadow: 0 0 15px 5px #ffffff;
+}
+
+.dish_card .image_wrapper {
+  /*border-radius: 1rem;*/
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  background: url("../assets/item_bg_blue.png");
+  background-size: cover;
+  border-bottom-right-radius: 2rem;
+}
+
+.dish_card .image_wrapper > img {
+  width: 65%;
+  /*margin: 0.5rem 0;*/
+}
+
+.dish_card .image_wrapper > img + img {
+  position: absolute;
+  bottom: -0.5rem;
+  height: 1.5rem;
+  width: auto;
+}
+
+.dish_card h1 {
+  margin: 0.5rem 0;
+  font-size: 100%;
+  text-align: center;
+  cursor: default;
+}
+
+.dish_info_container {
+  padding: 1rem 5%;
+  background: url("../assets/home_border.png");
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dish_info_container .info_dish_name {
+  /*background: dodgerblue;*/
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  background: url("../assets/1x/title_item_bg_blue.png");
+  background-size: 100% 100%;
+}
+
+.dish_info_container .info_dish_name h3 {
+  margin-left: 5%;
+}
+
+.dish_info_container .info_dish_image_wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  padding: 1rem 0.5rem;
+  background: url("../assets/item_bg_blue.png");
+  background-size: 100% 100%;
+}
+
+.dish_info_container .info_dish_image_wrapper > img {
+  width: 100%;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.dish_info_container .info_dish_image_wrapper > img + img {
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: end;
+  height: 2rem;
+  width: auto;
+}
+
+.dish_info_container .info_dish_detail_wrapper {
+  flex-grow: 1;
+  background: #ede5da;
+  padding: 2rem;
+}
+
+.dish_info_container .info_dish_detail_wrapper p {
+  height: 100%;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,78 @@
+/* CSS pentru toate paginile */
+@font-face {
+  font-family: genshinFont;
+  src: url(../assets/zh-cn.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: genshinFont;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+/* CSS pentru toate paginile --------------- */
+
+/* CSS Header */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 10rem;
+  background: url("../assets/header_bg.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-right: 4rem;
+  gap: 2rem;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.38);
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.38);
+}
+
+.logo {
+  height: 8rem;
+  width: auto;
+  margin-right: auto;
+}
+
+.header_button {
+  width: 12rem;
+  min-width: 12rem;
+  height: 4rem;
+  border-radius: 5px;
+  color: #312f1c;
+  font-size: larger;
+  background: url("../assets/button_bg.png") no-repeat;
+  background-size: 100% 100%;
+  border-color: #312f1c;
+  border-width: 3px;
+  cursor: pointer;
+}
+
+.header_button:hover {
+  filter: brightness(110%);
+}
+
+.header_button:disabled {
+  filter: saturate(0);
+  cursor: auto;
+}
+/* CSS Header --------------- */
+
+/* Wrapper pentru continut pagini */
+.wrapper {
+  background: cadetblue;
+  height: calc(100vh - 10rem);
+  position: relative;
+  z-index: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
