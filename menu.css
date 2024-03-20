@@ -65,6 +65,23 @@ body {
   filter: saturate(0);
   cursor: auto;
 }
+
+@media only screen and (max-width: 1410px) {
+  .logo {
+    display: none;
+  }
+
+  .header {
+    padding-right: 0;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .header_button {
+    width: 8rem;
+    min-width: 0;
+    font-size: 100%;
+  }
+}
 /* CSS Header --------------- */
 
 /* Wrapper pentru continut pagini */
@@ -85,14 +102,14 @@ body {
 }
 
 .dish_list_container {
-  padding: 1% 5%;
+  padding: 1% 6%;
 
   height: min-content;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(20%, 1fr));
   grid-auto-rows: min-content;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1rem;
 }
 
@@ -113,12 +130,24 @@ body {
   overflow: hidden;
 }
 
-.dish_card:hover {
-  box-shadow: 0 0 3px 3px #ffffff;
+.dish_card.orange:hover {
+  box-shadow: 0 0 0 2px #ffb300;
+}
+.dish_card.purple:hover {
+  box-shadow: 0 0 0 2px #7d18b3;
+}
+.dish_card.blue:hover {
+  box-shadow: 0 0 0 2px #48409b;
+}
+.dish_card.green:hover {
+  box-shadow: 0 0 0 2px #227d4d;
+}
+.dish_card.gray:hover {
+  box-shadow: 0 0 0 2px #adadade7;
 }
 
-.dish_card_selected {
-  box-shadow: 0 0 15px 5px #ffffff;
+.dish_card.selected {
+  box-shadow: 0 0 3px 3px #ffffff;
 }
 
 .dish_card .dish_card_image_wrapper {
@@ -130,9 +159,29 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
+
+  border-radius: 0 0 1rem 1rem;
+}
+
+.dish_card_image_wrapper.orange {
   background: url("assets/item_bg_orange.png");
   background-size: cover;
-  border-radius: 0 0 1rem 1rem;
+}
+.dish_card_image_wrapper.purple {
+  background: url("assets/item_bg_purple.png");
+  background-size: cover;
+}
+.dish_card_image_wrapper.blue {
+  background: url("assets/item_bg_blue.png");
+  background-size: cover;
+}
+.dish_card_image_wrapper.green {
+  background: url("assets/item_bg_green.png");
+  background-size: cover;
+}
+.dish_card_image_wrapper.gray {
+  background: url("assets/item_bg_gray.png");
+  background-size: cover;
 }
 
 .dish_card .dish_card_image_wrapper > img {
@@ -142,14 +191,14 @@ body {
 
 .dish_card .dish_card_image_wrapper > img + img {
   position: absolute;
-  bottom: -0.5rem;
+  bottom: -0.6rem;
   height: 1.5rem;
   width: auto;
 }
 
 .dish_card h1 {
-  margin: 0.5rem 0;
-  font-size: 100%;
+  margin: 0.8rem 0;
+  font-size: 90%;
   text-align: center;
   cursor: default;
 }
