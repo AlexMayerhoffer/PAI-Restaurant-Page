@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="reservations.css" />
   </head>
   <body>
+
     <div class="header">
       <img class="logo" src="assets/logo.png" alt="Logo" />
       <a href="index.html">
@@ -20,81 +21,117 @@
         <button class="header_button">About</button>
       </a>
     </div>
-    <div class="wrapper"></div>
-    <div class="calendar">
-      <div class="calendar-header">
-          <span class="month-picker" id="month-picker">April</span>
-          <div class="year-picker">
-              <span class="year-change" id="prev-year">
-                  <pre><</pre>
-              </span>
-              <span id="year">2024</span>
-              <span class="year-change" id="next-year">
-                  <pre>></pre>
-              </span>
+    <div class="wrapper">
+      <div class="column-wrapper">
+        <h2 class="reservation-header">
+          Please select a date
+        </h2>
+        <div class="calendar">
+          <div class="calendar-header">
+              <span class="month-picker" id="month-picker">April</span>
+              <div class="year-picker">
+                  <span class="year-change" id="prev-year">
+                      <pre><</pre>
+                  </span>
+                  <span id="year">2024</span>
+                  <span class="year-change" id="next-year">
+                      <pre>></pre>
+                  </span>
+              </div>
           </div>
+          <div class="calendar-body">
+              <div class="calendar-week-day">
+                  <div>Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+              </div>
+              <div class="calendar-days">
+                  <span></span>
+                  <span></span>
+                  <span>2</span>
+                  <span>3</span>
+                  <span>4</span>
+                  <span>5</span>
+                  <span>6</span>
+                  <span>7</span>
+                  <span>8</span>
+                  <span>9</span>
+                  <span>10</span>
+                  <span>11</span>
+                  <span>12</span>
+                  <span>13</span>
+                  <span>14</span>
+                  <span>15</span>
+                  <span>16</span>
+                  <span>17</span>
+                  <span>18</span>
+                  <span>19</span>
+                  <span>20</span>
+                  <span>21</span>
+                  <span>22</span>
+                  <span>23</span>
+                  <span>24</span>
+                  <span>25</span>
+                  <span>26</span>
+                  <span>27</span>
+                  <span>28</span>
+                  <span>29</span>
+                  <span>30</span>
+              </div>
+          </div>
+          <div class="month-list"></div>
+          <div class="calendar-button"></div>
       </div>
-      <div class="calendar-body">
-          <div class="calendar-week-day">
-              <div>Sun</div>
-              <div>Mon</div>
-              <div>Tue</div>
-              <div>Wed</div>
-              <div>Thu</div>
-              <div>Fri</div>
-              <div>Sat</div>
-          </div>
-          <div class="calendar-days">
-              <span></span>
-              <span></span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <span>5</span>
-              <span>6</span>
-              <span>7</span>
-              <span>8</span>
-              <span>9</span>
-              <span>10</span>
-              <span>11</span>
-              <span>12</span>
-              <span>13</span>
-              <span>14</span>
-              <span>15</span>
-              <span>16</span>
-              <span>17</span>
-              <span>18</span>
-              <span>19</span>
-              <span>20</span>
-              <span>21</span>
-              <span>22</span>
-              <span>23</span>
-              <span>24</span>
-              <span>25</span>
-              <span>26</span>
-              <span>27</span>
-              <span>28</span>
-              <span>29</span>
-              <span>30</span>
-          </div>
       </div>
-      <div class="month-list"></div>
-      <div class="calendar-button"></div>
-  </div>
-  <div class="selected-hours">
-    <div class="hours-header">Booking interval</div>
-    <div>
-      <ol>
-        <li>16:30 - 17:30</li>
-        <li>17:30 - 18:30</li>
-        <li>18:30 - 19:30</li>
-        <li>19:30 - 20:30</li>
-        <li>20:30 - 21:30</li>
-      </ol>
+      <div class="column-wrapper">
+        <h2 class="reservation-header">
+          Please select a time slot
+        </h2>
+        <div>
+          <ol>
+            <li>16:30 - 17:30</li>
+            <li>17:30 - 18:30</li>
+            <li>18:30 - 19:30</li>
+            <li>19:30 - 20:30</li>
+            <li>20:30 - 21:30</li>
+          </ol>
+        </div>
+      </div>
+      <div class="column-wrapper">
+        <h2 class="reservation-header">
+          Please add your personal data
+        </h2>
+        <form action="" method="get" class="form-reservation">
+          <div class="form-reservation">
+            <label for="persons-select">A reservation for how many persons? </label>
+            <select name="numbers" id="persons-select">
+              <option value="">--Please choose a number--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+          </div>
+          <div class="form-reservation">
+            <label for="name">Enter your name:</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div class="form-reservation">
+            <label for="number">Enter your phone number: </label>
+            <input type="text" name="number" id="number" required />
+          </div>
+          <div class="form-reservation"> 
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="form-submmit">
     
-  </div>
   </body>
 </html>
