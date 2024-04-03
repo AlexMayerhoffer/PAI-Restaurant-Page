@@ -52,7 +52,7 @@ body {
   font-size: larger;
   background: url("../assets/button_bg.png") no-repeat;
   background-size: 100% 100%;
-  border-color: #312f1c;
+  border-color: #000000;
   border-width: 3px;
   cursor: pointer;
 }
@@ -75,4 +75,44 @@ body {
   z-index: -1;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/home_border.png");
+}
+
+.content_wrapper {
+  height:50%;
+  height: 100%;
+  background: url("../assets/home_bg.png");
+  background-size: 130% 200%;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 5%;
+  padding-top: 200px;
+  text-align: center;
+}
+
+.content_wrapper h2 {
+  font-size: 1.25rem;
+  margin-bottom: 50px;
+}
+
+.content_wrapper .about_row {
+  width: 100%;
+  display: grid;
+  justify-items: start;
+  grid-template-columns: 1fr 9fr;
+  margin-top: 2rem;
+}
+
+.about_image {
+  height: 1rem;
+  width: auto;
 }

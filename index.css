@@ -52,7 +52,7 @@ body {
   font-size: larger;
   background: url("../assets/button_bg.png") no-repeat;
   background-size: 100% 100%;
-  border-color: #312f1c;
+  border-color: #000000;
   border-width: 3px;
   cursor: pointer;
 }
