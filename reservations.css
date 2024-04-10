@@ -60,6 +60,23 @@ body {
   filter: saturate(0);
   cursor: auto;
 }
+
+@media only screen and (max-width: 1410px) {
+  .logo {
+    display: none;
+  }
+
+  .header {
+    padding-right: 0;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .header_button {
+    width: 8rem;
+    min-width: 0;
+    font-size: 100%;
+  }
+}
 /* CSS Header --------------- */
 
 /* Wrapper pentru continut pagini */
@@ -72,6 +89,7 @@ body {
   height: calc(100dvh - 10rem);
   box-sizing: border-box;
   background: url("../assets/home_border.png") no-repeat;
+  background-size: 100% 100%;
 }
 
 .column-wrapper {
@@ -87,6 +105,7 @@ body {
   text-align: center;
   font-size:1.5rem;
   padding-top: 0.1rem;
+  color: #ede5da;
 }
 
 .calendar-container {
@@ -204,6 +223,8 @@ header .calendar-current-date {
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
   background-color: #ede5da;
+  position: relative;
+  overflow: hidden;
 }
 
 .hour-button {
@@ -220,6 +241,10 @@ header .calendar-current-date {
   align-self: center;
   justify-self: center;
   filter: hue-rotate(-50deg);
+}
+
+.hour-button-active {
+  filter:hue-rotate(-5deg);
 }
 
 .hour-button:disabled {
@@ -239,6 +264,8 @@ header .calendar-current-date {
   background-color: #ede5da;
   padding: 30px;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
 .reservation-form input, .reservation-form select{
@@ -278,4 +305,16 @@ header .calendar-current-date {
   font-size: 1.5rem;
   text-shadow: 0 0 0.5rem #000000;
   
+}
+
+.wrapper-inactive {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  position:absolute;
+  background-color: #000000;
+  opacity: 0.2;
+  pointer-events:initial;
 }

@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
     <link rel="stylesheet" href="reservations.css" />
-    <!-- <script src="reservations.js" defer></script> -->
+    <script src="reservations.js" defer></script>
   </head>
   <body>
 
     <div class="header">
       <img class="logo" src="assets/logo.png" alt="Logo" />
-      <a href="index.html">
+      <a draggable="false" href="index.html">
         <button class="header_button">Home</button>
       </a>
-      <a href="menu.html">
+      <a draggable="false" href="menu.html">
         <button class="header_button">Menu</button>
       </a>
       <button class="header_button" disabled>Reservations</button>
-      <a href="about.html">
+      <a draggable="false" href="about.html">
         <button class="header_button">About</button>
       </a>
     </div>
@@ -30,7 +30,7 @@
         </h2>
         <div class="calendar-container">
           <header class="calendar-header">
-              <p class="calendar-current-date"></p>
+              <p class="calendar-current-date">April 2024</p>
               <div class="calendar-navigation">
                   <span id="calendar-prev"◀
                         class="material-symbols-rounded">
@@ -54,7 +54,6 @@
                   <li>Sat</li>
               </ul>
               <ul class="calendar-dates">
-                <li id="date-cell--1" class="inactive">29</li>
                 <li id="date-cell-0">1</li>
                 <li id="date-cell-1">2</li>
                 <li id="date-cell-2">3</li>
@@ -85,18 +84,18 @@
                 <li id="date-cell-27">28</li>
                 <li id="date-cell-28">29</li>
                 <li id="date-cell-29">30</li>
-                <li id="date-cell-30" class="inactive">1</li>
-                <li id="date-cell-31" class="inactive">2</li>
-                <li id="date-cell-32" class="inactive">3</li>
-                <li id="date-cell-33" class="inactive">4</li>
-                <li id="date-cell-34" class="inactive">5</li>
-                <li id="date-cell-35" class="inactive">6</li>
-                <li id="date-cell-36" class="inactive">7</li>
-                <li id="date-cell-37" class="inactive">8</li>
-                <li id="date-cell-38" class="inactive">9</li>
-                <li id="date-cell-39" class="inactive">10</li>
-                <li id="date-cell-40" class="inactive">11</li>
-                <!-- <li id="date-cell-41 inactive">12</li> -->
+                <li id="date-cell-30"></li>
+                <li id="date-cell-31"></li>
+                <li id="date-cell-32"></li>
+                <li id="date-cell-33"></li>
+                <li id="date-cell-34"></li>
+                <li id="date-cell-35"></li>
+                <li id="date-cell-36"></li>
+                <li id="date-cell-37"></li>
+                <li id="date-cell-38"></li>
+                <li id="date-cell-39"></li>
+                <li id="date-cell-40"></li>
+                <li id="date-cell-41"></li>
 
               </ul>
           </div>
@@ -120,13 +119,14 @@
           <button class="hour-button" id="hour-8" disabled>19:00</button>
           <button class="hour-button" id="hour-9" disabled>20:00</button>
 
+          <div id="wrapper-inactive-hours" class="wrapper-inactive"></div>
         </div>
       </div>
       <div class="column-wrapper">
         <h2 class="reservation-header">
           Please fill your personal data
         </h2>
-        <form action="" method="post" class="reservation-form">
+        <form onsubmit="return false;" method="post" class="reservation-form">
             <label for="number-of-persons">Number of Persons:</label>
             <select name="numbers" id="number-of-persons">
               <option value="1" selected>1</option>
@@ -142,8 +142,9 @@
 
             <label for="phone-number">Phone Number:</label>
             <input type="tel" id="phone-number" name="phone-number" required>
-            <button type="submit" id="submit-reservation-button">Submit</button>
-        </form>
+            <button id="submit-reservation-button">Submit</button>
+            <div id="wrapper-inactive-form" class="wrapper-inactive"></div>
+          </form>
       </div>
     </div>
   </body>

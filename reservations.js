@@ -8,9 +8,7 @@ const currdate = document.querySelector(".calendar-current-date");
 const navigation_buttons = document.querySelectorAll(".calendar-navigation span");
 
 calendarCells = [...document.querySelectorAll(".calendar-dates li")];
-selected_date_location = date.getDate() + new Date(year, month, 1).getDay() - 1;
-selected_date = new Date();
-calendarCells[selected_date_location].classList.add("active");
+selected_date_location = 0;
 
 calendarCells.forEach((cell) => {
     cell.addEventListener("click", () => {
@@ -21,6 +19,7 @@ calendarCells.forEach((cell) => {
         selected_date_location = calendarCells.indexOf(cell);
         selected_date = new Date(year, month, selected_date_location - new Date(year, month, 1).getDay() + 1);
         cell.classList.add("active");
+		switchState('hours');
     });
 });
 
@@ -109,3 +108,68 @@ navigation_buttons.forEach(icon => {
 		renderMonth();
 	});
 });
+
+
+const hour_buttons = document.querySelectorAll(".hour-button");
+hour_buttons.forEach((button) => {
+	button.addEventListener("click", () => {
+		hour_buttons.forEach((button) => {
+			button.classList.remove("hour-button-active");
+		});
+		button.classList.add("hour-button-active");
+		switchState('form');
+	});
+})
+
+const clearHourButtons = () => {
+	hour_buttons.forEach((button) => {
+		button.classList.remove("hour-button-active");
+	});
+
+}
+
+
+
+
+
+// STATE MACHINE ---------------
+
+
+
+let reservation_state = 'date';
+let hours_curtain = document.getElementById('wrapper-inactive-hours');
+let form_curtain = document.getElementById('wrapper-inactive-form');
+
+const switchState = (state) => {
+	switch (state) {
+		case 'date':
+			hours_curtain.style.display = 'block';
+			form_curtain.style.display = 'block';
+			break;
+		case 'hours':
+			hours_curtain.style.display = 'none';
+			form_curtain.style.display = 'block';
+			clearHourButtons();
+			break;
+		case 'form':
+			hours_curtain.style.display = 'none';
+			form_curtain.style.display = 'none';
+			break;
+		}
+
+}
+
+
+
+
+// SUBMIT FORM ---------------
+
+let submit_button = document.getElementById('submit-reservation-button');
+submit_button.addEventListener('click', () => {
+	console.log('submitting reservation');
+	console.log('date:', selected_date.toDateString());
+	console.log('hour:', document.querySelector('.hour-button-active').innerText);
+	console.log('number of people:', document.getElementById('number-of-persons').value);
+	console.log('name:', document.getElementById('name').value);
+	console.log('phone:', document.getElementById('phone-number').value);
+})
